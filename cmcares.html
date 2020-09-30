@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>LOGO</title>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+		<!-- CSS Styles -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="stylesheet" href="css/styles.css">
+		
+		<!-- Font Awesome -->
+		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+		<!-- Bootstrap Scripts -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	
+		<!-- Navigation Bar -->
+		<section class="navbar-section">
+			<!-- Nav Bar -->
+			<nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
+					<a class="navbar-brand" href="index.html">LOGO</a>
+					<button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#aboutus">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contact.html">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+		</section>
+		
+		<!-- Search Form -->
+		<section class="search-form" id="search-bar">
+			<div class="formdonate">
+				<div class="col-md-4 offset-md-4">
+					<div class="form-group">
+						<input class="form-control form-control-lg" type="text" id="input" placeholder="Search Here...">
+						<ul id="list">
+							<li><a href="#Andhra">Andhra Pradesh</a></li>
+							<li><a href="#Tel">Telangana</a></li>
+							<li><a href="#Tamil">Tamil Nadu</a></li>
+							<li><a href="#Kar">Karnataka</a></li>
+							<li><a href="#Ker">Kerala</a></li>
+							<li><a href="#Ori">Orissa</a></li>
+							<li><a href="#Goa">Goa</a></li>
+							<li><a href="#Mah">Maharashtra</a></li>
+							<li><a href="#Madh">Madhya Pradesh</a></li>
+							<li><a href="#Chha">Chhattisgarh</a></li>
+							<li><a href="#Wes">West Bengal</a></li>
+							<li><a href="#Jha">Jharkhand</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			const input = document.getElementById("input");
+			const elementsList = document.getElementById("list");
+
+			let elementsListItems = document.getElementsByTagName("li");
+
+			const filter = () => {
+			  let filterValue = input.value.toUpperCase();
+			  filterValue === "" ? elementsList.style.display = "none" : elementsList.style.display = "inline"﻿
+			  for(i=0; i<elementsListItems.length; i++) {
+				if (elementsListItems[i].innerHTML.toUpperCase().indexOf(filterValue) !== -1) {
+				  elementsListItems[i].style.display = "";
+				} else {
+				  elementsListItems[i].style.display = "none";
+				}
+			  }
+			}
+
+			input.addEventListener("input", (event) => {
+			  filter();
+			})
+			
+			input.addEventListener("keyup", function(event) {
+			  if (event.keyCode === 13) {
+			   event.preventDefault();
+			   filter();
+			  }
+			})
+		</script>
+		
+		<!-- Features -->
+		<section class="features-section" id="state-govt">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="feature-box col-lg-4" id="Andhra">
+						<h3>Andhra Pradesh</h3><br/>
+						<div class="card">
+							<center><img src="images/Andhra_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="1">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Tel">
+						<h3>Telangana</h3><br/>
+						<div class="card">
+							<center><img src="images/telangana_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="2">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Tamil">
+						<h3>Tamil Nadu</h3><br/>
+						<div class="card">
+							<center><img src="images/tamil_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="3">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="feature-box col-lg-4" id="Kar">
+						<h3>Karnataka</h3><br/>
+						<div class="card">
+							<center><img src="images/kar_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="4">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Ker">
+						<h3>Kerala</h3><br/>
+						<div class="card">
+							<center><img src="images/ker_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="5">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Ori">
+						<h3>Orissa</h3><br/>
+						<div class="card">
+							<center><img src="images/odi_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="6">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="feature-box col-lg-4" id="Goa">
+						<h3>Goa</h3><br/>
+						<div class="card">
+							<center><img src="images/goa_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="7">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Mah">
+						<h3>Maharashtra</h3><br/>
+						<div class="card">
+							<center><img src="images/Maha_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="8">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Madh">
+						<h3>Madhya Pradesh</h3><br/>
+						<div class="card">
+							<center><img src="images/mdp_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="9">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="feature-box col-lg-4" id="Chha">
+						<h3>Chhattisgarh</h3><br/>
+						<div class="card">
+							<center><img src="images/chh_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="10">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Wes">
+						<h3>West Bengal</h3><br/>
+						<div class="card">
+							<center><img src="images/wesb_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="11">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+					<div class="feature-box col-lg-4" id="Jha">
+						<h3>Jharkhand</h3><br/>
+						<div class="card">
+							<center><img src="images/Jha_emb.jpg" style='width:100px; height:100px; border-radius:50%;' /></center>
+							<hr>
+							<form class="pmcares-form" action="donationform.php" method="post">
+								<input type="hidden" name="myfile" value="12">
+								<button class="button" type="submit" style="vertical-align:middle"><i class="fas fa-rupee-sign"></i>&nbsp;<span>Donate</span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- about us -->
+		<section class="white-section " id="aboutus">
+			<h2 class="section-heading">About us</h2>
+			<div class="about">
+				<p class="about-content">
+					LOGO is a <b>testing donation platform</b> wants to spread our wings in a large scale to help the government by collecting funds from the Donors
+					living in places throughout the country in this pandemic period. We will be developing this platform to make donation to central government or a 
+					particular state government you want to donate.<b> At present it is in testing mode</b>. Please join hands to donate and help the government as well the people in
+					India who have lost	their livelihood and are also in danger of getting in contact with Covid.
+				</p>
+			</div>
+		</section>
+		
+		<!-- footer -->
+		<footer class="footer-section" id="footer">
+			<div class="container-fluid">
+				<a href="https://github.com/PMK09"><i class="social-icon fab fa-github icons"></i></a>&nbsp;&nbsp;
+				<a href="https://www.instagram.com/manojkumarpotnuru/?hl=en"><i class="social-icon fab fa-instagram icons"></i></a>&nbsp;&nbsp;
+				<a href="https://www.linkedin.com/in/potnurumanojkumar-a72732192/"><i class="social-icon fab fa-linkedin-in icons"></i></a>
+				<p>© Copyright 2020 LOGO</p>
+			</div>
+		</footer>
+		
+	</body>
+</html>
